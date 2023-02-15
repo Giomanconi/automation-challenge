@@ -1,19 +1,25 @@
-import { homePageSelectors } from "../support/constants/homePage"
-const globals = require('../support/constants/globals')
+import { homePageSelectors, cartPageSelectors } from "../support/constants/selectors";
+const globals = require('../support/constants/globals');
 
 describe('Shop Cart', () => {
 
   beforeEach(function () {
-    console.log("top beforeEach");
+    cy.loginViaUI(globals.happyUser.username, globals.happyUser.password);
   });
 
-  it.only('Add item to cart - positive', () => {
-    cy.loginViaUi(globals.happyUser.username, globals.happyUser.password)
-    cy.get(homePageSelectors.cartIcon).should('be.visible')
-  })
+  it('Badge Functionality', () => {
+    cy.xpath(homePageSelectors.addBackpackToCartButton).click();
+    cy.xpath(homePageSelectors.cartButton)
+      .within(() => {
+        return cy.get('span').as('badge').should('contain', 1);
+      });
+    cy.xpath(homePageSelectors.removeBackpackFromCartButton).click();
+    cy.get('@badge').should('not.exist');
+  });
 
-  it('Password is required', () => {
-    cy.loginViaUi(globals.happyUser.username)
-    cy.get(loginPageSelectors.loginErrorBanner).should('contain', loginPageTexts.emptyPassword)
-  })
-})
+  it('Add items to cart', () => {
+    cy.xpath(homePageSelectors.addBackpackToCartButton).click();
+    cy.xpath(homePageSelectors.cartButton).click();
+    cy.xpath(cartPageSelectors.firstCartItem).should('contain', 'Sauce Labs Backpack');
+  });
+});

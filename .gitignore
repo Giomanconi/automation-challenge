@@ -1,3 +1,9 @@
+# User generated ignore
+cypress/videos
+cypress/screenshots
+cypress/downloads
+cypress/reports
+
 # Logs
 logs
 *.log

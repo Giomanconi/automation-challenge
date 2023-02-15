@@ -1,5 +1,9 @@
 {
   "dependencies": {
-    "cypress": "^12.5.1"
+    "cypress": "^12.5.1",
+    "cypress-xpath": "^2.0.1"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.3.0"
   }
 }
