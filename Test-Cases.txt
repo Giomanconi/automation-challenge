@@ -1,0 +1,65 @@
+----------------------------------------
+Functionality: Login
+
+Test Cases:
+
+  Title: Verify login page is working correclty
+  Description: User should be able to visit "www.saucedemo.com" and the page should load correctly in a timely manner
+
+  Title: Verify the user can login with valid credentials
+  Description: User should login successfully and be redirected to the Home Page in a timmely manner
+
+  Title: Verify the user is not able to login with invalid credentials
+  Description: "Username and password do not match any user in this service" Error message should be displayed
+
+  Title: Verify Username is required when when clicking login if the user leaves Username field empty 
+  Description: "Username is required" Error message should be displayed 
+
+  Title: Verify Password is required when when clicking login if the user leaves Password field empty 
+  Description: "Password is required" Error message should be displayed 
+
+  Title: Verify the user is not able to login with valid locked out credentials
+  Description: "Sorry, this user has been locked out" error message should be displayed
+
+  Title: Verify the user is able to login successfully with valid credentials after a failed attempt with invalid credentials
+  Description: User should login successfully and be redirected to the Home Page
+
+  Title: Verify password is hidden
+  Description: When typing the password it must remain hidden from view with dots
+
+  Title: Verify show password button
+  Description: After having typed on the password field an eye icon should be displayed and the user should be able to toggle the show password on the password field functionality
+----------------------------------------
+----------------------------------------
+
+
+----------------------------------------
+Functionality: Add items to cart
+
+Test Cases:
+
+  Title: Verify user should be able to add an item to the cart from the homepage 
+  Description: Add to Cart button should change to "remove" and a badge with the numbers of items added should appear on the cart icon. The User also should be able to see the item in the cart
+
+  Title: Verify that the cart icon badge works correctly
+  Description: Badge number of items in cart increase and decrease correctly while adding or removing items from cart
+
+  Title: Verify items are added correclty to the cart
+  Description: Items that are added to the cart should be displayed correclty (name and price) in the cart page
+
+  Title: Verify Cart items persistance
+  Description: Cart items should remain in cart after login out and in again
+
+  Title: Verify in cart item from item detail page 
+  Description: On the items detail page, if the items are already added to the cart it should appear the remove button, if not, the add to cart button should be visible
+
+  Title: Verify add to cart button on item detail page
+  Description: Verify the user is able to add items to the cart from it's detail page
+
+  Title: Verify cart page link
+  Description: User should be able to navigate to Cart Page when clicking to the cart icon
+
+  Title: Verify Remove from cart functionality
+  Description: User should be able to remove items from cart, once an item is removed, it should dissapear from the cart and it should be able to be added again from item detail or home page again
+----------------------------------------
+----------------------------------------
